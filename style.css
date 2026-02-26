@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3LFst-12QS7HY1e1LKPsnn-_JM4b_MOHVkA&s");
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease;
+  z-index: -1;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.box1,
+.box2,
+.box3 {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 30px;
+  transition: 0.4s ease;
+}
+.box1:hover,
+.box2:hover,
+.box3:hover {
+  width: 350px;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+ .box1:hover ~ .bg {
+  background-image: url("https://yucca.co.za/wp-content/uploads/2025/09/yucca-packaging-meat-poultry-seafood-mince-steak-chicken-and-more.jpg");
+}
+
+ .box2:hover ~ .bg {
+  background-image: url("https://yucca.co.za/wp-content/uploads/2025/11/yucca-packaging-agriculture-strawberry-blueberry-gooseberry-grapes-kiwi-avo.jpg");
+}
+
+ .box3:hover ~ .bg {
+  background-image: url("https://yucca.co.za/wp-content/uploads/2025/09/yucca-packaging-for-food-service-takeout-catering-deli-smoothies-coffee-desserts.jpg");
+}
