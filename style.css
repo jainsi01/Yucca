@@ -3,59 +3,204 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
   width: 100%;
   height: 100%;
+  color: #1D1D1B;
+}
+@font-face {
+  font-family: Magnetlight;
+  src: url(/MagnetTrial-ExtraLight-BF65f3b2c458ace.otf);
 }
 
-body {
-  position: relative;
-}
-
-.bg {
-  position: absolute;
-  inset: 0;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3LFst-12QS7HY1e1LKPsnn-_JM4b_MOHVkA&s");
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.5s ease;
-  z-index: -1;
-}
-.wrapper {
+main{
   width: 100%;
-  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+nav{
+  height: 10vh;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  padding: 0px 100px;
+  justify-content: space-evenly;
+  position: fixed;
+  border-bottom: 0.3px solid #6c6c64;
+  z-index: 10;
+}
+.logo{
+  display: flex;
+  align-items: center;
+}
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+}
+.nav-links p{
+  font-family: magnetlight;
+  font-size: 12px;
+  font-weight: 800;
+  color: black;
+}
+.icons{
+  display: flex;
   align-items: center;
   gap: 20px;
+  justify-content: end;
+  height: 100%;
+  width: 30%;
+
+
 }
-.box1,
-.box2,
-.box3 {
-  width: 300px;
-  height: 300px;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
-  border-radius: 30px;
-  transition: 0.4s ease;
+.credit-container{
+  display: flex;
+  gap: 5px;
+  font-family: magnetlight;
+  font-size: 12px;
 }
-.box1:hover,
-.box2:hover,
-.box3:hover {
-  width: 350px;
-  height: 350px;
-  background-color: rgba(255, 255, 255, 0.85);
+.cartsvg,.profilesvg{
+  border: 1px solid #1D1D1B;
+  border-radius: 2px;
+  padding: 2px;
+}
+.svg-icons{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.hero{
+  height: 100vh;
+  width: 100%;
+  background-color: #6c6c64;
+  position: relative;
+
+
+}
+.hero img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.overlay{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  padding: 0px 170px;
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+.overlay h1{
+  font-size: 60px;
+  font-family: magnetlight;
+  width: 60%;
+}
+.card-container{
+  display: flex;
+  gap: 20px;
+}
+.card {
+  height: 280px;
+  width: 280px;
+  background-color: rgba(255, 255, 255, 0.42);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   backdrop-filter: blur(10px);
+  transition: all ease 0.1s;
+  position: relative;
+}
+.text-container p{
+  font-size: 26px;
+  font-family: magnetlight;
+  font-weight: 600;
+  transition: all ease 0.3s;
 }
 
- .box1:hover ~ .bg {
-  background-image: url("https://yucca.co.za/wp-content/uploads/2025/09/yucca-packaging-meat-poultry-seafood-mince-steak-chicken-and-more.jpg");
+.card:hover{
+  background-color: #FFFDF5;
+}
+.text-container{
+  height: 4vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
- .box2:hover ~ .bg {
-  background-image: url("https://yucca.co.za/wp-content/uploads/2025/11/yucca-packaging-agriculture-strawberry-blueberry-gooseberry-grapes-kiwi-avo.jpg");
+.card:hover .text-container p{
+  margin-top: -20%;
+}
+.para-container{
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 5px;
+  top: 10%;
+
+
+}
+.para-text-container{
+  gap: 20px;
+   
+  font-size: 15px;
+  position: relative;
+  height: 2vh;
+  width: 100%;
+  overflow: hidden;
+}
+.para-text-container p{
+  font-family: magnetlight;
+  font-size: 12px;
+  position: absolute;
+  left: 10px;
+  bottom: -100%;
+  transition: all ease 0.5s;
 }
 
- .box3:hover ~ .bg {
-  background-image: url("https://yucca.co.za/wp-content/uploads/2025/09/yucca-packaging-for-food-service-takeout-catering-deli-smoothies-coffee-desserts.jpg");
+.card:hover .para-text-container p{
+  bottom: 0;
+}
+.line-horizontal{
+  height: 1px;
+  width: 0%;
+  background-color: #000;
+  position: absolute;
+  bottom: 20%;
+  left: 10px;
+  transition: all ease 0.5s;
+}
+.card:hover .line-horizontal{
+  width: 90%;
+}
+.button-container{
+  position: absolute;
+  display: flex;
+  bottom: 5%;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 10px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+.button-container p{
+  font-family: magnetlight;
+  font-size: 12px;
+
+}
+.card:hover .button-container{
+  opacity: 1;
+  bottom: 7%;
 }
